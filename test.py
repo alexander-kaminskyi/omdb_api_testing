@@ -6,5 +6,6 @@ print("1111")
 dict1 = {}
 if not isinstance(dict1, dict):
     print("yeah")
-    
+
+a = "dwdddwdwdwdwdwdw"
 
