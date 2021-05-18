@@ -2,6 +2,6 @@
 for _ in range(19):
     print("Lohika")
 print("1111")
-dict = {}
-if isinstance(dict, dict):
+dict1 = {}
+if not isinstance(dict1, dict):
     print("yeah")
