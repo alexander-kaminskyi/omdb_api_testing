@@ -1,5 +1,5 @@
 import pytest
-from rest.OmdbClient import *
+from rest.OmdbClient import OmdbClient
 
 omdb_client = OmdbClient()
 
