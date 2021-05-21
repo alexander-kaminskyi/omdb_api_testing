@@ -1,0 +1,36 @@
+"OMDB_API_testing" project was written in Python 3.8 with help of pytest framework.
+Project contains such files: requirements.txt, consts.py, test/tests.py, rest/OmdbBase.py and rest/OmdbClient.py.
+consts.py contains api_key and url variables. In OmdbBase.py "url" and "log" variables are initialized. Methods for testing are defined in OmdbClient.py
+1. search
+    Returns a list of all results that matched that search string. Takes pagination in account when generating the list. Query uses s parameter as specified
+2. get_by_id
+    Returns the result based on the input id e.g. tt999999. Query uses i parameter as specified.
+3. get_by_title
+    Returns the result based on input string as title name. Query uses t parameter as specified here.
+
+File "tests.py" includes "TestOmdbApi" class with test method "test_omdb_rest_api".
+Test steps:
+1. Using "search" method, search for all items that match the search string "stem"
+2. Assert that the result should contain at least 30 items
+3. Assert that the result contains items titled The STEM Journals and Activision: STEM - in the Videogame Industry
+4. From the list returned by search above, get imdbID for item titled Activision: STEM - in the Videogame Industry and use it to get details on this movie using get_by_id method.
+5. Assert that the movie was released on 23 Nov 2010 and was directed by Mike Feurstein
+6. Using "get_by_title" method, get item by title The STEM Journals and assert that the plot contains the string Science, Technology, Engineering and Math and has a runtime of 22 minutes.
+It's data-driven with decorator
+@pytest.mark.parametrize("title_name",
+                         ["The STEM Journals", "Activision: STEM - in the Videogame Industry"]).
+So it will be executed twice with two different titles.
+
+### Installation and Usage:
+1. Download and install JetBrains PyCharm Community Edition latest version
+2. Install python 3.x if needed
+3. Launch PyCharm
+4. Open "OMDB_API_Testing" project. It's recommended to create virtual env for it.
+5. Install python packages. It's recommended to do that from cmd line like:
+> source <path to your virt env>/bin/activate
+> pip3 install -r <path to file>/requirements.txt
+6. To run "OMDB_API_testing" from terminal:
+> py.test tests/tests.py -v (w/o logs)
+> pytest -v -s tests/tests.py (with logs)
+or
+> py.test -v -s tests/tests.py
