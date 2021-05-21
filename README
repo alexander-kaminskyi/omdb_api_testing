@@ -1,4 +1,4 @@
-"OMDB_API_testing" project was written in Python 3.8 with help of pytest framework.
+"OMDB_api_testing" project was written in Python 3.8 with help of pytest framework.
 Project contains such files: requirements.txt, consts.py, test/tests.py, rest/OmdbBase.py and rest/OmdbClient.py.
 consts.py contains api_key and url variables. In OmdbBase.py "url" and "log" variables are initialized. Methods for testing are defined in OmdbClient.py
 1. search
