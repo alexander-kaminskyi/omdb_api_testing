@@ -29,5 +29,4 @@ class TestTest:
         el = self.driver.find_element(By.XPATH, "//*[@class='text-center alert alert-danger']").text
         expected_err_message = "Невірне ім\'я користувача"
         assert el == expected_err_message
-        self.driver.find_element(By.NAME, "q").send_keys(Keys.ENTER)
 
